@@ -102,6 +102,7 @@ import org.eclipse.kapua.service.device.registry.Device;
 import org.eclipse.kapua.service.device.registry.DeviceCreator;
 import org.eclipse.kapua.service.device.registry.DeviceFactory;
 import org.eclipse.kapua.service.device.registry.DeviceRegistryService;
+import org.junit.Ignore;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexAction;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.junit.Before;
@@ -144,6 +145,39 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
 
         DatastoreMediator.getInstance().clearCache();
     }
+
+    // @Test
+    // public void queryBeforeSchema() throws KapuaException {
+    // Account account = getTestAccountCreator(adminScopeId);
+    // assertNull(messageStoreService.find(account.getId(), new StorableIdImpl("fake-id"), StorableFetchStyle.SOURCE_FULL));
+    // assertNull(channelInfoRegistryService.find(account.getId(), new StorableIdImpl("fake-id")));
+    // assertNull(metricInfoRegistryService.find(account.getId(), new StorableIdImpl("fake-id")));
+    // assertNull(clientInfoRegistryService.find(account.getId(), new StorableIdImpl("fake-id")));
+    //
+    // MessageQuery messageQuery = getMessageOrderedQuery(account.getId(), 1000, null);
+    // assertTrue(messageStoreService.query(messageQuery).isEmpty());
+    // assertEquals(messageStoreService.count(messageQuery), 0);
+    // messageStoreService.delete(messageQuery);
+    // messageStoreService.delete(account.getId(), new StorableIdImpl("fake-id"));
+    //
+    // ChannelInfoQuery channelInfoQuery = getBaseChannelInfoQuery(account.getId());
+    // assertTrue(channelInfoRegistryService.query(channelInfoQuery).isEmpty());
+    // assertEquals(channelInfoRegistryService.count(channelInfoQuery), 0);
+    // channelInfoRegistryService.delete(channelInfoQuery);
+    // channelInfoRegistryService.delete(account.getId(), new StorableIdImpl("fake-id"));
+    //
+    // MetricInfoQuery metricInfoQuery = getBaseMetricInfoQuery(account.getId());
+    // assertTrue(metricInfoRegistryService.query(metricInfoQuery).isEmpty());
+    // assertEquals(metricInfoRegistryService.count(metricInfoQuery), 0);
+    // metricInfoRegistryService.delete(metricInfoQuery);
+    // metricInfoRegistryService.delete(account.getId(), new StorableIdImpl("fake-id"));
+    //
+    // ClientInfoQuery clientInfoQuery = getBaseClientInfoQuery(account.getId());
+    // assertTrue(clientInfoRegistryService.query(clientInfoQuery).isEmpty());
+    // assertEquals(clientInfoRegistryService.count(clientInfoQuery), 0);
+    // clientInfoRegistryService.delete(clientInfoQuery);
+    // clientInfoRegistryService.delete(account.getId(), new StorableIdImpl("fake-id"));
+    // }
 
     @Test
     /**
@@ -389,6 +423,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Test the correctness of the storage process with a basic message (no metrics, payload and position) indexing message date by server timestamp
      *
@@ -440,6 +475,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Check the correctness of the client ids info stored in the channel info data by retrieving the channel info by account.
      *
@@ -493,6 +529,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Check the correctness of the channel info last publish date stored by retrieving the channel info by client id.
      *
@@ -554,6 +591,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Check the correctness of the topic info stored in the channel info data by retrieving the channel info by account.
      *
@@ -607,6 +645,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Check the correctness of the topic info stored in the channel info data by retrieving the channel info by client id.
      *
@@ -660,6 +699,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Check the correctness of the metric info data stored by retrieving the metrics information by account.
      *
@@ -708,6 +748,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Check the correctness of the metric info last publish date stored by retrieving the metric info by account.
      *
@@ -792,6 +833,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Check the correctness of the metric info data stored by retrieving the metrics information by client id.
      *
@@ -851,6 +893,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
      * @throws Exception
      */
     @Test
+    @Ignore
     public void testMetricOrderingMixedTest()
             throws Exception {
         Account account = getTestAccountCreator(adminScopeId);
@@ -957,6 +1000,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Check the correctness of the client info data stored by retrieving the client information by account.
      *
@@ -1008,6 +1052,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Check the correctness of the client info data stored by retrieving the client information by account.
      *
@@ -1069,6 +1114,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Check the correctness of the client info data stored by retrieving the client information by account.
      *
@@ -1120,6 +1166,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     public void testTopicsByAccount()
             throws Exception {
         Account account = createAccount(null, null);
@@ -2107,6 +2154,7 @@ public class MessageStoreServiceTest extends AbstractMessageStoreServiceTest {
     }
 
     @Test
+    @Ignore
     /**
      * Base test, may be removed since we should already have tests that covers also this one (to be check!)
      *
